@@ -136,11 +136,12 @@ int main()
     cout<<"------------------------objeto----------------------------"<<endl;
     DynamicArray<Persona> persona;
     Persona p1("Ronald",18);
-    cout<<p1;
     Persona p2("Ventura",18);
     persona.pushback(p1);
     persona.insert(p2,1);
+    persona.print();
+    cout<<"-----------------------------"<<endl;
     persona.remover(0);
-    
+    persona.print();
     return 0;
 }
