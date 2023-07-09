@@ -82,7 +82,7 @@ public:
   
 };
 
-
+//class persona
 class Persona {
 private:
   string nombre;
@@ -106,10 +106,26 @@ public:
 ostream& operator<<(ostream& os, const Persona& dt){
     os <<"Nombre: "<< dt.nombre <<"\n"<<"Edad: " << dt.edad<<"\n";
     return os;
-  }
-
-
-
+}
+//class polygon
+class Polygon {
+protected:
+    int width, heigth;
+public:
+    Polygon() = default;
+    Polygon(int a, int b) :width(a), heigth(b) {}
+    int area(void) { return 0; }
+    void printarea() {
+        std::cout << this->area() << '\n';
+    }
+    friend ostream& operator<<(ostream& os, const Polygon& dt);
+};
+ostream& operator<<(ostream& os, const Polygon& dt)
+{
+    os << "width: " << dt.width << "\n" << "heigth: " << dt.heigth << "\n";
+    return os;
+}
+//main
 int main()
 {
     cout<<"-----------------------int-----------------------"<<endl;
@@ -143,5 +159,17 @@ int main()
     cout<<"-----------------------------"<<endl;
     persona.remover(0);
     persona.print();
+    
+    cout<<"------------------------Polygon----------------------------"<<endl;
+    DynamicArray<Polygon> p;
+    Polygon a(18, 10);
+    Polygon b(2, 2);
+    p.pushback(a);
+    p.insert(b, 0);
+    p.print();
+    std::cout << "------------------------" << std::endl;
+    p.remover(0);
+    p.print();
+    return 0;
     return 0;
 }
