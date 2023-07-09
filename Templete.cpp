@@ -171,5 +171,4 @@ int main()
     p.remover(0);
     p.print();
     return 0;
-    return 0;
 }
